@@ -238,7 +238,7 @@
         try {
             // Передаем токен авторизации в заголовках. Это поднимает лимит GitHub API с 60 до 5000 запросов в час.
             // Вместо ?t=Date.now() используем заголовок 'If-None-Match', который браузеры обрабатывают корректно без лишней траты лимитов.
-            const response = await fetch(`https://github.com{GIST_ID}`, {
+            const response = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
                 headers: {
                     'Authorization': `token ${GITHUB_TOKEN}`,
                     'Cache-Control': 'no-cache'
