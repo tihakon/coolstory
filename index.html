@@ -297,7 +297,7 @@
             const oldContent = getData.files[FILE_NAME].content;
             const newContent = oldContent + (oldContent ? '\n' : '') + encrypted;
 
-            await fetch(`https://github.com{GIST_ID}`, {
+            await fetch(`https://api.github.com/gists/${GIST_ID}`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `token ${GITHUB_TOKEN}`,
